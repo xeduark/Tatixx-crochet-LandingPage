@@ -21,11 +21,11 @@ El sitio está construido utilizando herramientas de última generación para ga
 Para garantizar la mejor experiencia de usuario en cualquier dispositivo, la interfaz fue diseñada bajo una filosofía *mobile-first* antes de escalarla a pantallas grandes:
 
 ### 🖥️ Vista de Escritorio (Desktop)
-![Diseño versión Escritorio](./src/assets/preview-desktop.png)
+![Diseño versión Escritorio](./src/assets/preview-desktop.png.png)
 *Interfaz limpia con una distribución espacial óptima para catálogos y storytelling.*
 
 ### 📱 Vista Móvil (Mobile Responsive)
-<img src="./src/assets/preview-mobile.png" width="350" alt="Diseño versión Móvil" />
+<img src="./src/assets/preview-mobile.png.png" width="350" alt="Diseño versión Móvil" />
 
 *Diseño compacto, menús accesibles y botones de acción rápidos optimizados para navegación táctil.*
 
