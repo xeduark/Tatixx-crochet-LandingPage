@@ -1,0 +1,66 @@
+---
+import navLinks from '../data/nav.json';
+import socialLinks from '../data/social.json';
+import YarnBall from '../components/ui/YarnBall.astro';
+---
+<footer class="relative bg-slate-900 text-white pt-16 pb-8 overflow-hidden">
+  <div class="absolute inset-0 opacity-20">
+    <div class="absolute top-10 left-10 w-40 h-40 rounded-full bg-pink-500 blur-3xl"></div>
+    <div class="absolute bottom-10 right-10 w-40 h-40 rounded-full bg-teal-500 blur-3xl"></div>
+    <div class="absolute top-1/2 left-1/2 w-40 h-40 rounded-full bg-purple-500 blur-3xl"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <div class="grid md:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+      <div class="md:col-span-2 space-y-4">
+        <div class="flex items-center gap-2">
+          <div class="relative w-10 h-10">
+            <YarnBall size="w-full h-full" />
+            <div class="absolute inset-1 rounded-full border-2 border-dashed border-white/70"></div>
+          </div>
+          <div class="leading-tight">
+            <span class="font-pacifico text-2xl yarn-text">Taty Crochet</span>
+            <span class="block text-[10px] text-pink-300 font-semibold tracking-wider">· tejiendo historias ·</span>
+          </div>
+        </div>
+        <p class="text-slate-300 max-w-sm">Miniempresa creada en 2025 con amor, hilos y mucha creatividad. Cada puntada cuenta una historia. 💕</p>
+        <div class="flex gap-3 pt-2">
+          {socialLinks.map(s => (
+            <a href={s.href} aria-label={s.label} class:list={['w-11 h-11 rounded-full flex items-center justify-center hover:scale-110 transition', s.className]}>
+              <i data-lucide={s.icon} class="w-5 h-5"></i>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-fredoka font-bold text-lg mb-4 text-pink-300">Navegación</h4>
+        <ul class="space-y-2 text-slate-300">
+          {navLinks.map(l => (
+            <li><a href={l.href} class="hover:text-pink-300 transition inline-flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i>{l.label}</a></li>
+          ))}
+          <li><a href="#newsletter" class="hover:text-pink-300 transition inline-flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i>Newsletter</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-fredoka font-bold text-lg mb-4 text-teal-300">Contacto</h4>
+        <ul class="space-y-3 text-slate-300">
+          <li class="flex items-start gap-2"><i data-lucide="mail" class="w-5 h-5 text-pink-400 mt-0.5"></i><span>hola@tatycrochet.com</span></li>
+          <li class="flex items-start gap-2"><i data-lucide="phone" class="w-5 h-5 text-teal-400 mt-0.5"></i><span>+00 000 000 000</span></li>
+          <li class="flex items-start gap-2"><i data-lucide="map-pin" class="w-5 h-5 text-yellow-400 mt-0.5"></i><span>Hecho a mano con amor</span></li>
+          <li class="flex items-start gap-2"><i data-lucide="clock" class="w-5 h-5 text-purple-400 mt-0.5"></i><span>Lun - Sáb · 9am - 7pm</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+      <p>© 2026 Taty Crochet. Todos los derechos reservados. 🧶</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-pink-300 transition">Términos</a>
+        <a href="#" class="hover:text-pink-300 transition">Privacidad</a>
+        <a href="#" class="hover:text-pink-300 transition">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>

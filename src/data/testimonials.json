@@ -1,0 +1,8 @@
+[
+  { "id": 1, "text": "Pedí un amigurumi personalizado para el cumpleaños de mi hija y quedó HERMOSO. Los detalles, los colores... ¡superó mis expectativas!", "name": "María González", "initial": "M", "year": "2025", "color": "yarn-ball-3", "borderColor": "border-pink-200" },
+  { "id": 2, "text": "Las flores eternas que compré para mi mamá la hicieron llorar de emoción. Calidad increíble y un trato súper cálido. 100% recomendada.", "name": "Carlos Ramírez", "initial": "C", "year": "2026", "color": "yarn-ball-2", "borderColor": "border-teal-200" },
+  { "id": 3, "text": "Encargué un set de decoración para baby shower y fue el centro de atención. Taty es muy atenta y creativa. ¡Volveré a comprar!", "name": "Laura Méndez", "initial": "L", "year": "2026", "color": "yarn-ball-4", "borderColor": "border-purple-200" },
+  { "id": 4, "text": "Compré un llavero personalizado y es adorable. Se nota el amor en cada puntada. El envío llegó rapidísimo.", "name": "Ana Torres", "initial": "A", "year": "2025", "color": "yarn-ball", "borderColor": "border-yellow-200" },
+  { "id": 5, "text": "Regalé un osito tejido a mi novio y no lo suelta. La calidad es excelente y el precio muy justo. ¡Gracias Taty!", "name": "Sofía Herrera", "initial": "S", "year": "2026", "color": "yarn-ball-2", "borderColor": "border-pink-200" },
+  { "id": 6, "text": "Ya es la tercera vez que compro. Cada pieza es una obra de arte. Taty pone el corazón en todo lo que hace.", "name": "Diego Vargas", "initial": "D", "year": "2025-2026", "color": "yarn-ball-3", "borderColor": "border-teal-200" }
+]

@@ -1,0 +1,10 @@
+[
+  { "id": "p1", "name": "Osito Amigurumi", "category": "amigurumi", "price": "$25", "color": "yarn-ball", "icon": "bear", "description": "Peluche tejido suave y adorable" },
+  { "id": "p2", "name": "Ramo de Flores Eternas", "category": "flores", "price": "$35", "color": "yarn-ball-2", "icon": "flower-2", "description": "Flores que nunca se marchitan" },
+  { "id": "p3", "name": "Llavero Personalizado", "category": "accesorios", "price": "$8", "color": "yarn-ball-3", "icon": "key", "description": "Tu nombre o iniciales tejidas" },
+  { "id": "p4", "name": "Muñeca Custom", "category": "amigurumi", "price": "$45", "color": "yarn-ball-4", "icon": "smile", "description": "Diseño único según tu idea" },
+  { "id": "p5", "name": "Centro de Mesa", "category": "decoracion", "price": "$30", "color": "yarn-ball", "icon": "flower", "description": "Decoración tejida para eventos" },
+  { "id": "p6", "name": "Gorro de Bebé", "category": "accesorios", "price": "$18", "color": "yarn-ball-2", "icon": "baby", "description": "Suave, cálido y adorable" },
+  { "id": "p7", "name": "Cactus Tejido", "category": "decoracion", "price": "$20", "color": "yarn-ball-3", "icon": "flower", "description": "Sin espinas, puro amor" },
+  { "id": "p8", "name": "Conejito Pastel", "category": "amigurumi", "price": "$22", "color": "yarn-ball-4", "icon": "heart", "description": "Perfecto para regalar" }
+]

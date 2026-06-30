@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../layouts/Navbar.astro';
+import Hero from '../components/sections/Hero.astro';
+import About from '../components/sections/About.astro';
+import Products from '../components/sections/Products.astro';
+import Testimonials from '../components/sections/Testimonials.astro';
+import Newsletter from '../components/sections/Newsletter.astro';
+import Footer from '../layouts/Footer.astro';
+---
+<Layout title="Taty Crochet · Tejiendo Historias">
+  <Navbar />
+  <main>
+    <Hero />
+    <About />
+    <Products />
+    <Testimonials />
+    <Newsletter />
+  </main>
+  <Footer />
+
+  <script is:inline>
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const closeMenu = document.getElementById('closeMenu');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => mobileMenu?.classList.add('open'));
+    closeMenu?.addEventListener('click', () => mobileMenu?.classList.remove('open'));
+    document.querySelectorAll('.mobile-link').forEach(l =>
+      l.addEventListener('click', () => mobileMenu?.classList.remove('open'))
+    );
+  </script>
+</Layout>

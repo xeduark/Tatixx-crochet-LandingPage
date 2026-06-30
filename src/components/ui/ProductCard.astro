@@ -1,0 +1,23 @@
+---
+import type { Product } from '../../types';
+interface Props { product: Product; }
+const { product } = Astro.props;
+---
+<div class="product-card rounded-3xl overflow-hidden shadow-lg border-2 border-dashed border-pink-200 card-hover">
+  <div class="aspect-square bg-gradient-to-br from-pink-100 via-yellow-50 to-teal-100 flex items-center justify-center relative">
+    <div class:list={[product.color, 'w-28 h-28 rounded-full floaty flex items-center justify-center']}>
+      <i data-lucide={product.icon} class="w-14 h-14 text-white"></i>
+    </div>
+    <span class="absolute top-3 right-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-fredoka font-bold text-pink-600">
+      {product.price}
+    </span>
+  </div>
+  <div class="p-5">
+    <div class="text-xs font-fredoka font-semibold text-teal-600 uppercase tracking-wider mb-1">{product.category}</div>
+    <h3 class="font-fredoka font-bold text-lg text-slate-800 mb-1">{product.name}</h3>
+    <p class="text-sm text-slate-600 mb-3">{product.description}</p>
+    <button class="w-full btn-secondary text-white py-2 rounded-xl font-fredoka font-semibold inline-flex items-center justify-center gap-2">
+      <i data-lucide="shopping-cart" class="w-4 h-4"></i> Pedir
+    </button>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+---
+interface Props {
+  name: string;
+  class?: string;
+  fill?: boolean;
+}
+const { name, class: className = 'w-5 h-5', fill = false } = Astro.props;
+---
+<i data-lucide={name} class:list={[className, fill && 'fill-current']}></i>

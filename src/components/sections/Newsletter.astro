@@ -1,0 +1,50 @@
+---
+import SectionTitle from '../ui/SectionTitle.astro';
+---
+<section id="newsletter" class="py-20">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative rounded-[2.5rem] overflow-hidden p-8 sm:p-14 bg-gradient-to-br from-pink-400 via-purple-400 to-teal-400 shadow-2xl">
+      <div class="absolute top-6 left-6 w-20 h-20 rounded-full bg-white/20 backdrop-blur"></div>
+      <div class="absolute bottom-6 right-6 w-32 h-32 rounded-full bg-white/10 backdrop-blur"></div>
+      <div class="absolute top-1/2 right-10 w-14 h-14 rounded-full bg-yellow-300/40 backdrop-blur"></div>
+
+      <div class="relative grid md:grid-cols-2 gap-8 items-center">
+        <div class="text-white space-y-4">
+          <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-4 py-1 rounded-full text-sm font-fredoka font-semibold">
+            <i data-lucide="mail" class="w-4 h-4"></i> Newsletter
+          </div>
+          <h2 class="font-fredoka font-bold text-4xl sm:text-5xl leading-tight">
+            Únete a la<br/>comunidad tejida 💌
+          </h2>
+          <p class="text-white/90 text-lg">Recibe novedades, descuentos exclusivos y tips de crochet directo en tu correo.</p>
+        </div>
+
+        <form id="newsletterForm" class="bg-white rounded-3xl p-6 shadow-xl space-y-4">
+          <div>
+            <label class="font-fredoka font-semibold text-slate-700 text-sm">Tu nombre</label>
+            <input type="text" required placeholder="Ej: María" class="w-full mt-1 px-4 py-3 rounded-xl border-2 border-pink-200 focus:border-pink-400 focus:outline-none font-fredoka"/>
+          </div>
+          <div>
+            <label class="font-fredoka font-semibold text-slate-700 text-sm">Tu correo</label>
+            <input type="email" required placeholder="hola@ejemplo.com" class="w-full mt-1 px-4 py-3 rounded-xl border-2 border-pink-200 focus:border-pink-400 focus:outline-none font-fredoka"/>
+          </div>
+          <button type="submit" class="w-full btn-primary text-white py-3 rounded-xl font-fredoka font-bold inline-flex items-center justify-center gap-2">
+            <i data-lucide="send" class="w-5 h-5"></i> Suscribirme
+          </button>
+          <p id="newsletterMsg" class="text-center text-sm font-fredoka text-teal-600 hidden">¡Gracias por suscribirte! 🎉</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('newsletterForm') as HTMLFormElement;
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const msg = document.getElementById('newsletterMsg')!;
+    msg.classList.remove('hidden');
+    form.reset();
+    setTimeout(() => msg.classList.add('hidden'), 4000);
+  });
+</script>

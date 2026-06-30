@@ -1,0 +1,28 @@
+---
+interface Props {
+  variant?: 'primary' | 'secondary';
+  href?: string;
+  type?: 'button' | 'submit';
+  icon?: string;
+  class?: string;
+  fullWidth?: boolean;
+}
+const { variant = 'primary', href, type = 'button', icon, class: className = '', fullWidth = false } = Astro.props;
+const classes = [
+  variant === 'primary' ? 'btn-primary' : 'btn-secondary',
+  'text-white px-7 py-3 rounded-full font-fredoka font-semibold inline-flex items-center justify-center gap-2',
+  fullWidth && 'w-full',
+  className
+];
+---
+{href ? (
+  <a href={href} class:list={classes}>
+    {icon && <i data-lucide={icon} class="w-5 h-5"></i>}
+    <slot />
+  </a>
+) : (
+  <button type={type} class:list={classes}>
+    {icon && <i data-lucide={icon} class="w-5 h-5"></i>}
+    <slot />
+  </button>
+)}

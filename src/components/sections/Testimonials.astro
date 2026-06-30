@@ -1,0 +1,37 @@
+---
+import testimonials from '../../data/testimonials.json';
+import type { Testimonial } from '../../types';
+import SectionTitle from '../ui/SectionTitle.astro';
+import YarnBall from '../ui/YarnBall.astro';
+---
+<section id="testimonios" class="py-20 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-purple-100 via-pink-50 to-teal-100"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <SectionTitle
+      badge="Opiniones"
+      badgeColor="bg-yellow-100 text-yellow-700"
+      title="Testimonios"
+      subtitle="Lo que dicen quienes ya recibieron una pieza tejida con amor 💕"
+    />
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {testimonials.map((t: Testimonial) => (
+        <div class:list={['testimonial-card rounded-3xl p-6 shadow-lg border-2 border-dashed card-hover', t.borderColor]}>
+          <div class="flex text-yellow-400 mb-3">
+            {Array.from({ length: 5 }).map(() => <i data-lucide="star" class="w-4 h-4 fill-current"></i>)}
+          </div>
+          <p class="text-slate-700 italic mb-4">"{t.text}"</p>
+          <div class="flex items-center gap-3">
+            <YarnBall variant={t.color} size="w-12 h-12" class="flex items-center justify-center text-white font-fredoka font-bold">
+              {t.initial}
+            </YarnBall>
+            <div>
+              <div class="font-fredoka font-bold text-slate-800">{t.name}</div>
+              <div class="text-xs text-slate-500">Cliente feliz · {t.year}</div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

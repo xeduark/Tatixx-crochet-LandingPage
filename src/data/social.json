@@ -1,0 +1,7 @@
+[
+  { "label": "Instagram", "href": "#", "icon": "instagram", "className": "bg-gradient-to-br from-pink-500 to-purple-600" },
+  { "label": "Facebook", "href": "#", "icon": "facebook", "className": "bg-blue-600" },
+  { "label": "TikTok", "href": "#", "icon": "music-2", "className": "bg-slate-800 border border-white/20" },
+  { "label": "WhatsApp", "href": "#", "icon": "message-circle", "className": "bg-green-500" },
+  { "label": "Pinterest", "href": "#", "icon": "pin", "className": "bg-red-600" }
+]

@@ -1,0 +1,99 @@
+---
+import products from '../../data/products.json';
+import type { Product } from '../../types';
+import SectionTitle from '../ui/SectionTitle.astro';
+import FilterChip from '../ui/FilterChip.astro';
+import ProductCard from '../ui/ProductCard.astro';
+
+const filters = [
+  { value: 'all', label: 'Todos', color: 'border-pink-200' },
+  { value: 'amigurumi', label: 'Amigurumis', color: 'border-pink-200' },
+  { value: 'flores', label: 'Flores', color: 'border-teal-200' },
+  { value: 'accesorios', label: 'Accesorios', color: 'border-yellow-200' },
+  { value: 'decoracion', label: 'Decoración', color: 'border-purple-200' },
+];
+---
+<section id="productos" class="py-20 bg-gradient-to-b from-white to-pink-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionTitle
+      badge="Catálogo"
+      badgeColor="bg-teal-100 text-teal-700"
+      title="Mis productos"
+      subtitle="Piezas únicas tejidas con amor. ¡Elige la tuya o pídemela personalizada!"
+    />
+
+    <div class="flex flex-wrap justify-center gap-3 mb-10">
+      {filters.map((f, i) => (
+        <FilterChip value={f.value} label={f.label} color={f.color} active={i === 0} />
+      ))}
+    </div>
+
+    <div id="productGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" data-products={JSON.stringify(products)}>
+      {(products as Product[]).map(p => (
+        <ProductCard product={p} />
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const iconMap: Record<string, string> = {
+    "bear":"M12 2a3 3 0 0 0-3 3v1H6a3 3 0 0 0-3 3v4a3 3 0 0 0 2 2.83V19a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3v-3.17A3 3 0 0 0 21 13V9a3 3 0 0 0-3-3h-3V5a3 3 0 0 0-3-3z",
+    "flower-2":"M12 7.5a4.5 4.5 0 1 1 4.5 4.5M12 7.5A4.5 4.5 0 1 0 7.5 12M12 7.5V9m-4.5 3a4.5 4.5 0 1 0 4.5 4.5M7.5 12H9m3 4.5a4.5 4.5 0 1 0 4.5-4.5M12 16.5V15m4.5-3a4.5 4.5 0 1 0-4.5-4.5M16.5 12H15",
+    "key":"m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l1.3-1.3a2 2 0 1 0-2.8-2.8l-1.3 1.3a1 1 0 0 0 0 1.4M2 22l5-5m-3 3 1.5-1.5M11 13l-6 6",
+    "smile":"M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01",
+    "flower":"M12 7.5a4.5 4.5 0 1 1 4.5 4.5M12 7.5A4.5 4.5 0 1 0 7.5 12M12 7.5V9m-4.5 3a4.5 4.5 0 1 0 4.5 4.5M7.5 12H9m3 4.5a4.5 4.5 0 1 0 4.5-4.5M12 16.5V15m4.5-3a4.5 4.5 0 1 0-4.5-4.5M16.5 12H15",
+    "baby":"M9 12h.01M15 12h.01M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5M19 6.3a9 9 0 0 1 3 6.2 9 9 0 0 1-3 6.2M5 6.3a9 9 0 0 0-3 6.2 9 9 0 0 0 3 6.2M12 2a10 10 0 0 0-7 3 10 10 0 0 0 0 14 10 10 0 0 0 14 0 10 10 0 0 0 0-14 10 10 0 0 0-7-3z",
+    "heart":"M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z",
+  };
+
+  interface Product {
+    id: string; name: string; category: string; price: string;
+    color: string; icon: string; description: string;
+  }
+
+  const grid = document.getElementById('productGrid')!;
+  const products: Product[] = JSON.parse(grid.dataset.products || '[]');
+
+  function renderProducts(filter = 'all') {
+    grid.innerHTML = '';
+    products
+      .filter(p => filter === 'all' || p.category === filter)
+      .forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'product-card rounded-3xl overflow-hidden shadow-lg border-2 border-dashed border-pink-200 card-hover';
+        card.innerHTML = `
+          <div class="aspect-square bg-gradient-to-br from-pink-100 via-yellow-50 to-teal-100 flex items-center justify-center relative">
+            <div class="${p.color} w-28 h-28 rounded-full floaty flex items-center justify-center">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-14 h-14">
+                <path d="${iconMap[p.icon] || iconMap.heart}"/>
+              </svg>
+            </div>
+            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-fredoka font-bold text-pink-600">${p.price}</span>
+          </div>
+          <div class="p-5">
+            <div class="text-xs font-fredoka font-semibold text-teal-600 uppercase tracking-wider mb-1">${p.category}</div>
+            <h3 class="font-fredoka font-bold text-lg text-slate-800 mb-1">${p.name}</h3>
+            <p class="text-sm text-slate-600 mb-3">${p.description}</p>
+            <button class="w-full btn-secondary text-white py-2 rounded-xl font-fredoka font-semibold inline-flex items-center justify-center gap-2">
+              <i data-lucide="shopping-cart" class="w-4 h-4"></i> Pedir
+            </button>
+          </div>`;
+        grid.appendChild(card);
+      });
+    // Re-inicializa iconos de Lucide
+    (window as any).lucide?.createIcons();
+  }
+
+  document.querySelectorAll<HTMLButtonElement>('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.remove('bg-pink-500', 'text-white');
+        b.classList.add('bg-white', 'text-slate-700');
+      });
+      btn.classList.remove('bg-white', 'text-slate-700');
+      btn.classList.add('bg-pink-500', 'text-white');
+      renderProducts(btn.dataset.filter);
+    });
+  });
+</script>

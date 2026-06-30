@@ -1,0 +1,104 @@
+---
+import Button from '../ui/Button.astro';
+import YarnBall from '../ui/YarnBall.astro';
+---
+<section id="inicio" class="relative min-h-screen pt-28 pb-16 overflow-hidden">
+  <!-- Flores decorativas -->
+  <svg class="flower top-20 left-10 w-16 h-16 text-pink-300" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1 3 3 5 6 6-3 1-5 3-6 6-1-3-3-5-6-6 3-1 5-3 6-6z"/><path d="M12 22c-1-3-3-5-6-6 3-1 5-3 6-6 1 3 3 5 6 6-3 1-5 3-6 6z"/></svg>
+  <svg class="flower bottom-32 right-16 w-20 h-20 text-teal-300" style="animation-duration:25s" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1 3 3 5 6 6-3 1-5 3-6 6-1-3-3-5-6-6 3-1 5-3 6-6z"/><path d="M12 22c-1-3-3-5-6-6 3-1 5-3 6-6 1 3 3 5 6 6-3 1-5 3-6 6z"/></svg>
+  <svg class="flower top-1/3 right-10 w-12 h-12 text-yellow-300" style="animation-duration:18s" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1 3 3 5 6 6-3 1-5 3-6 6-1-3-3-5-6-6 3-1 5-3 6-6z"/><path d="M12 22c-1-3-3-5-6-6 3-1 5-3 6-6 1 3 3 5 6 6-3 1-5 3-6 6z"/></svg>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+    <div class="space-y-6">
+      <span class="inline-flex items-center gap-2 bg-pink-100 text-pink-700 px-4 py-2 rounded-full text-sm font-fredoka font-semibold">
+        <i data-lucide="sparkles" class="w-4 h-4"></i>
+        Miniempresa desde 2025 · Creciendo con cada puntada
+      </span>
+      <h1 class="font-fredoka font-bold text-5xl sm:text-6xl lg:text-7xl leading-tight">
+        <span class="yarn-text">Taty Crochet</span>
+        <span class="block text-slate-800 text-3xl sm:text-4xl lg:text-5xl mt-2">Tejiendo historias,<br/>una a una 💕</span>
+      </h1>
+      <p class="text-lg text-slate-600 max-w-xl">
+        Cada pieza está hecha a mano con amor, color y creatividad. Amigurumis, accesorios, decoración y regalos únicos que cuentan tu historia.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <Button href="#productos" icon="shopping-bag">Ver productos</Button>
+        <Button href="#sobre-mi" variant="secondary" icon="heart">Conoce mi historia</Button>
+      </div>
+      <div class="flex items-center gap-6 pt-4">
+        <div class="flex -space-x-3">
+          <YarnBall size="w-10 h-10" class="border-2 border-white" />
+          <YarnBall variant="yarn-ball-2" size="w-10 h-10" class="border-2 border-white" />
+          <YarnBall variant="yarn-ball-3" size="w-10 h-10" class="border-2 border-white" />
+          <YarnBall variant="yarn-ball-4" size="w-10 h-10" class="border-2 border-white" />
+        </div>
+        <div class="font-fredoka">
+          <div class="flex text-yellow-400">
+            {Array.from({ length: 5 }).map(() => <i data-lucide="star" class="w-4 h-4 fill-current"></i>)}
+          </div>
+          <p class="text-sm text-slate-600">+200 clientes felices</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visual -->
+    <div class="relative flex items-center justify-center">
+      <div class="hero-circle w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] rounded-full flex items-center justify-center relative">
+        <div class="absolute inset-0 rounded-full border-4 border-dashed border-pink-300"></div>
+        <div class="absolute inset-3 rounded-full border-2 border-dashed border-teal-300"></div>
+
+        <svg class="absolute -rotate-45" width="200" height="200" viewBox="0 0 200 200">
+          <line x1="40" y1="160" x2="160" y2="40" stroke="url(#hookGrad)" stroke-width="10" stroke-linecap="round"/>
+          <circle cx="160" cy="40" r="10" fill="none" stroke="#ff5fa2" stroke-width="6"/>
+          <defs>
+            <linearGradient id="hookGrad" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0%" stop-color="#ff5fa2"/>
+              <stop offset="50%" stop-color="#a855f7"/>
+              <stop offset="100%" stop-color="#14b8a6"/>
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <YarnBall size="w-24 h-24" class="absolute top-10 left-10 floaty" />
+        <YarnBall variant="yarn-ball-2" size="w-20 h-20" class="absolute bottom-16 right-12 floaty" style="animation-delay:.5s" />
+        <YarnBall variant="yarn-ball-3" size="w-16 h-16" class="absolute top-20 right-16 floaty" style="animation-delay:1s" />
+        <YarnBall variant="yarn-ball-4" size="w-14 h-14" class="absolute bottom-24 left-16 floaty" style="animation-delay:1.5s" />
+
+        <div class="relative z-10 bg-white/80 backdrop-blur rounded-full p-6 shadow-xl">
+          <svg width="120" height="120" viewBox="0 0 120 120">
+            <path d="M60 100 C 20 70, 5 50, 25 30 C 40 15, 55 25, 60 40 C 65 25, 80 15, 95 30 C 115 50, 100 70, 60 100 Z"
+                  fill="none" stroke="url(#heartGrad)" stroke-width="6" stroke-linecap="round" stroke-dasharray="8 4"/>
+            <defs>
+              <linearGradient id="heartGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#ff5fa2"/>
+                <stop offset="50%" stop-color="#facc15"/>
+                <stop offset="100%" stop-color="#14b8a6"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+
+      <div class="absolute top-4 -left-2 bg-white rounded-2xl shadow-lg p-3 floaty">
+        <div class="flex items-center gap-2">
+          <YarnBall variant="yarn-ball-2" size="w-8 h-8" />
+          <div class="font-fredoka text-sm font-semibold text-slate-700">100%<br/>Handmade</div>
+        </div>
+      </div>
+      <div class="absolute bottom-8 -right-2 bg-white rounded-2xl shadow-lg p-3 floaty" style="animation-delay:1s">
+        <div class="flex items-center gap-2">
+          <i data-lucide="heart" class="w-6 h-6 text-pink-500 fill-pink-500"></i>
+          <div class="font-fredoka text-sm font-semibold text-slate-700">Hecho con<br/>amor</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Marquee -->
+  <div class="mt-16 overflow-hidden border-y-2 border-dashed border-pink-200 bg-gradient-to-r from-pink-50 via-yellow-50 to-teal-50 py-4">
+    <div class="marquee flex gap-12 whitespace-nowrap font-fredoka font-bold text-2xl text-pink-400">
+      <span>🧶 Amigurumis</span><span>💐 Flores eternas</span><span>🎁 Regalos personalizados</span><span>🧸 Peluches</span><span>👜 Accesorios</span><span>🏠 Decoración</span>
+      <span>🧶 Amigurumis</span><span>💐 Flores eternas</span><span>🎁 Regalos personalizados</span><span>🧸 Peluches</span><span>👜 Accesorios</span><span>🏠 Decoración</span>
+    </div>
+  </div>
+</section>

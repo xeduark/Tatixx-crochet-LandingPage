@@ -1,0 +1,6 @@
+[
+  { "href": "#inicio", "label": "Inicio", "icon": "home", "color": "text-pink-500" },
+  { "href": "#sobre-mi", "label": "Sobre mí", "icon": "heart", "color": "text-purple-500" },
+  { "href": "#productos", "label": "Productos", "icon": "shopping-bag", "color": "text-teal-500" },
+  { "href": "#testimonios", "label": "Testimonios", "icon": "message-circle-heart", "color": "text-yellow-500" }
+]

@@ -1,0 +1,25 @@
+---
+import type { NavLink } from '../types';
+interface Props { links: NavLink[]; }
+const { links } = Astro.props;
+---
+<div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-72 bg-white/95 backdrop-blur shadow-2xl p-6 md:hidden">
+  <button id="closeMenu" class="absolute top-4 right-4 p-2 rounded-full bg-pink-100 text-pink-600">
+    <i data-lucide="x" class="w-5 h-5"></i>
+  </button>
+  <ul class="mt-16 space-y-6 font-fredoka font-semibold text-lg text-slate-700">
+    {links.map(link => (
+      <li>
+        <a href={link.href} class="flex items-center gap-3 mobile-link">
+          <i data-lucide={link.icon} class:list={['w-5 h-5', link.color]}></i>
+          {link.label}
+        </a>
+      </li>
+    ))}
+    <li>
+      <a href="#newsletter" class="btn-primary text-white px-5 py-3 rounded-full inline-flex items-center gap-2">
+        <i data-lucide="mail" class="w-5 h-5"></i>Suscríbete
+      </a>
+    </li>
+  </ul>
+</div>
